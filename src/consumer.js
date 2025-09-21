@@ -14,7 +14,7 @@ const init = async () => {
     const connection = await amqp.connect(process.env.RABBITMQ_SERVER);
     const channel = await connection.createChannel();
 
-    const queue = "export:songs";
+    const queue = "exports:songs";
     await channel.assertQueue(queue, {
       durable: true,
     });
